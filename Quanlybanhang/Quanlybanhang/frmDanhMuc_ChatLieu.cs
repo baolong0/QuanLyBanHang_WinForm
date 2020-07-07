@@ -21,7 +21,7 @@ namespace Quanlybanhang
 
         private void dgvChatLieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            LoadChatLieu();
+            
         }
 
         void LoadChatLieu()
@@ -53,6 +53,11 @@ namespace Quanlybanhang
                               select sp).Single<ChatLieu>();
             qlbh.ChatLieux.Remove(xoasp);
             qlbh.SaveChanges();
+            LoadChatLieu();
+        }
+
+        private void frmDanhMuc_ChatLieu_Load(object sender, EventArgs e)
+        {
             LoadChatLieu();
         }
     }

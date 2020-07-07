@@ -53,6 +53,7 @@ namespace Quanlybanhang
                 txtTenChatLieu.Focus(); //Lệnh đặt con trỏ ngay vị trí đó
                 return;
             }
+            //Thêm cái khi thêm nếu có MaChatLieu rồi thì thông báo trùng
             qlbh.ChatLieux.Add(sp);
             qlbh.SaveChanges();
             LoadChatLieu();
@@ -124,10 +125,12 @@ namespace Quanlybanhang
                 excel.Visible = true;
             }
         }
-
-        private void btnHienThiDS_Click(object sender, EventArgs e)
+        private void dgvChatLieu_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            dgvChatLieu
+            txtMaChatLieu.Text = dgvChatLieu.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtTenChatLieu.Text = dgvChatLieu.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
+
+        
     }
 }

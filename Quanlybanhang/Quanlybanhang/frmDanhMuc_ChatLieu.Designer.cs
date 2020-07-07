@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.lblMaChatLieu);
             this.panel1.Controls.Add(this.lblDanhMucChatLieu);
             this.panel1.Location = new System.Drawing.Point(2, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 129);
             this.panel1.TabIndex = 0;
@@ -62,7 +62,7 @@
             // txtTenChatLieu
             // 
             this.txtTenChatLieu.Location = new System.Drawing.Point(168, 88);
-            this.txtTenChatLieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenChatLieu.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenChatLieu.Name = "txtTenChatLieu";
             this.txtTenChatLieu.Size = new System.Drawing.Size(241, 20);
             this.txtTenChatLieu.TabIndex = 1;
@@ -70,7 +70,7 @@
             // txtMaChatLieu
             // 
             this.txtMaChatLieu.Location = new System.Drawing.Point(168, 58);
-            this.txtMaChatLieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaChatLieu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaChatLieu.Name = "txtMaChatLieu";
             this.txtMaChatLieu.Size = new System.Drawing.Size(241, 20);
             this.txtMaChatLieu.TabIndex = 0;
@@ -112,13 +112,14 @@
             this.dgvChatLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChatLieu.GridColor = System.Drawing.SystemColors.Control;
             this.dgvChatLieu.Location = new System.Drawing.Point(2, 129);
-            this.dgvChatLieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvChatLieu.Margin = new System.Windows.Forms.Padding(2);
             this.dgvChatLieu.Name = "dgvChatLieu";
             this.dgvChatLieu.RowHeadersWidth = 82;
             this.dgvChatLieu.RowTemplate.Height = 33;
             this.dgvChatLieu.Size = new System.Drawing.Size(500, 326);
             this.dgvChatLieu.TabIndex = 2;
             this.dgvChatLieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChatLieu_CellContentClick);
+            this.dgvChatLieu.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChatLieu_RowEnter);
             // 
             // groupBox2
             // 
@@ -128,9 +129,9 @@
             this.groupBox2.Controls.Add(this.btnXuatFileExcel);
             this.groupBox2.Controls.Add(this.btnDong);
             this.groupBox2.Location = new System.Drawing.Point(506, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(136, 455);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
@@ -139,7 +140,7 @@
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.Control;
             this.btnSua.Location = new System.Drawing.Point(9, 209);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(118, 36);
             this.btnSua.TabIndex = 50;
@@ -151,7 +152,7 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.Control;
             this.btnThem.Location = new System.Drawing.Point(9, 27);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(118, 36);
             this.btnThem.TabIndex = 48;
@@ -163,7 +164,7 @@
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
             this.btnXoa.Location = new System.Drawing.Point(9, 118);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(118, 36);
             this.btnXoa.TabIndex = 49;
@@ -176,7 +177,7 @@
             this.btnXuatFileExcel.Image = global::Quanlybanhang.Properties.Resources.Dakirby309_Simply_Styled_Microsoft_Excel_20131;
             this.btnXuatFileExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXuatFileExcel.Location = new System.Drawing.Point(9, 300);
-            this.btnXuatFileExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXuatFileExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuatFileExcel.Name = "btnXuatFileExcel";
             this.btnXuatFileExcel.Size = new System.Drawing.Size(118, 36);
             this.btnXuatFileExcel.TabIndex = 43;
@@ -189,7 +190,7 @@
             // 
             this.btnDong.BackColor = System.Drawing.SystemColors.Control;
             this.btnDong.Location = new System.Drawing.Point(9, 391);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(118, 36);
             this.btnDong.TabIndex = 46;
@@ -205,7 +206,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvChatLieu);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDanhMuc_ChatLieu";
             this.Text = "Chất Liệu";
             this.Load += new System.EventHandler(this.frmDanhMuc_ChatLieu_Load);

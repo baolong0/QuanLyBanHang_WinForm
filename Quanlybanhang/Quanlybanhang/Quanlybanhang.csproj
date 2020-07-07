@@ -56,10 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatLieu.cs">
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="ChiTietHoaDon.cs">
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc_HangHoa.cs">
       <SubType>Form</SubType>
@@ -73,11 +73,11 @@
     <Compile Include="DanhMuc_KhachHang.Designer.cs">
       <DependentUpon>DanhMuc_KhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDanhMuc_NhanVien.cs">
       <SubType>Form</SubType>
@@ -104,33 +104,34 @@
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Hang.cs">
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="HoaDonBan.cs">
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
+    <Compile Include="KetNoi.cs" />
     <Compile Include="Khach.cs">
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanlyBanHang.Context.cs">
+    <Compile Include="QuanLyBanHang.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanlyBanHang.Context.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="QuanlyBanHang.cs">
+    <Compile Include="QuanLyBanHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanlyBanHang.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="QuanlyBanHang.Designer.cs">
+    <Compile Include="QuanLyBanHang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanlyBanHang.edmx</DependentUpon>
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DanhMuc_HangHoa.resx">
       <DependentUpon>DanhMuc_HangHoa.cs</DependentUpon>
@@ -138,8 +139,8 @@
     <EmbeddedResource Include="DanhMuc_KhachHang.resx">
       <DependentUpon>DanhMuc_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMuc_NhanVien.resx">
       <DependentUpon>frmDanhMuc_NhanVien.cs</DependentUpon>
@@ -161,7 +162,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.Config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,31 +175,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QuanlyBanHang.edmx">
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="QuanLyBanHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanlyBanHang.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLyBanHang.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="QuanlyBanHang.edmx.diagram">
-      <DependentUpon>QuanlyBanHang.edmx</DependentUpon>
+    <None Include="QuanLyBanHang.edmx.diagram">
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QuanlyBanHang.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuanlyBanHang.Context.cs</LastGenOutput>
-      <DependentUpon>QuanlyBanHang.edmx</DependentUpon>
-    </Content>
-    <Content Include="QuanlyBanHang.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanlyBanHang.edmx</DependentUpon>
-      <LastGenOutput>QuanlyBanHang.cs</LastGenOutput>
-    </Content>
+    <None Include="Resources\Dakirby309-Simply-Styled-Microsoft-Excel-20131.ico" />
+    <None Include="Resources\Dakirby309-Simply-Styled-Microsoft-Excel-2013.ico" />
+    <None Include="Resources\5a514b62f0cceae57c5b394a74685126.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanLyBanHang.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHang.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanLyBanHang.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHang.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

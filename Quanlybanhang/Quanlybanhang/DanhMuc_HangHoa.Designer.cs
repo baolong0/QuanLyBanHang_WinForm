@@ -48,19 +48,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDanhMucHangHoa = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnXuatFileExcel = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnBoQua = new System.Windows.Forms.Button();
             this.btnHienThiDS = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
-            this.btnBoQua = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,16 +85,16 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblDanhMucHangHoa);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(805, 272);
+            this.panel1.Size = new System.Drawing.Size(640, 473);
             this.panel1.TabIndex = 0;
             // 
             // btnMo
             // 
-            this.btnMo.Location = new System.Drawing.Point(546, 72);
+            this.btnMo.Location = new System.Drawing.Point(526, 239);
             this.btnMo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMo.Name = "btnMo";
             this.btnMo.Size = new System.Drawing.Size(44, 29);
@@ -103,7 +104,7 @@
             // 
             // picAnh
             // 
-            this.picAnh.Location = new System.Drawing.Point(612, 72);
+            this.picAnh.Location = new System.Drawing.Point(483, 73);
             this.picAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picAnh.Name = "picAnh";
             this.picAnh.Size = new System.Drawing.Size(142, 160);
@@ -121,16 +122,16 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(383, 160);
+            this.txtGhiChu.Location = new System.Drawing.Point(334, 134);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(140, 75);
+            this.txtGhiChu.Size = new System.Drawing.Size(140, 101);
             this.txtGhiChu.TabIndex = 29;
             // 
             // txtAnh
             // 
-            this.txtAnh.Location = new System.Drawing.Point(381, 72);
+            this.txtAnh.Location = new System.Drawing.Point(332, 72);
             this.txtAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnh.Multiline = true;
             this.txtAnh.Name = "txtAnh";
@@ -183,7 +184,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(327, 161);
+            this.label7.Location = new System.Drawing.Point(278, 161);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
@@ -193,7 +194,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(327, 76);
+            this.label8.Location = new System.Drawing.Point(278, 76);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 13);
@@ -272,127 +273,144 @@
             this.lblDanhMucHangHoa.TabIndex = 14;
             this.lblDanhMucHangHoa.Text = "Danh Mục Hàng Hoá";
             // 
-            // panel2
+            // dgvHangHoa
             // 
-            this.panel2.Controls.Add(this.btnHienThiDS);
-            this.panel2.Controls.Add(this.btnDong);
-            this.panel2.Controls.Add(this.btnBoQua);
-            this.panel2.Controls.Add(this.btnLuu);
-            this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 429);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 72);
-            this.panel2.TabIndex = 1;
+            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangHoa.Location = new System.Drawing.Point(6, 272);
+            this.dgvHangHoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHangHoa.Name = "dgvHangHoa";
+            this.dgvHangHoa.RowHeadersWidth = 82;
+            this.dgvHangHoa.RowTemplate.Height = 33;
+            this.dgvHangHoa.Size = new System.Drawing.Size(618, 189);
+            this.dgvHangHoa.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.btnXuatFileExcel);
+            this.groupBox2.Controls.Add(this.btnLuu);
+            this.groupBox2.Controls.Add(this.btnBoQua);
+            this.groupBox2.Controls.Add(this.btnHienThiDS);
+            this.groupBox2.Controls.Add(this.btnDong);
+            this.groupBox2.Location = new System.Drawing.Point(644, 6);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(136, 455);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSua.Location = new System.Drawing.Point(9, 134);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(118, 36);
+            this.btnSua.TabIndex = 50;
+            this.btnSua.Text = "&Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.Control;
+            this.btnThem.Location = new System.Drawing.Point(9, 27);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(118, 36);
+            this.btnThem.TabIndex = 48;
+            this.btnThem.Text = "&Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
+            this.btnXoa.Location = new System.Drawing.Point(9, 80);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(118, 36);
+            this.btnXoa.TabIndex = 49;
+            this.btnXoa.Text = "&Xoá";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            // 
+            // btnXuatFileExcel
+            // 
+            this.btnXuatFileExcel.Image = global::Quanlybanhang.Properties.Resources.Dakirby309_Simply_Styled_Microsoft_Excel_20131;
+            this.btnXuatFileExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatFileExcel.Location = new System.Drawing.Point(9, 344);
+            this.btnXuatFileExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXuatFileExcel.Name = "btnXuatFileExcel";
+            this.btnXuatFileExcel.Size = new System.Drawing.Size(118, 36);
+            this.btnXuatFileExcel.TabIndex = 43;
+            this.btnXuatFileExcel.Text = "Xuất File Excel";
+            this.btnXuatFileExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatFileExcel.UseVisualStyleBackColor = true;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLuu.Location = new System.Drawing.Point(9, 183);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(118, 36);
+            this.btnLuu.TabIndex = 44;
+            this.btnLuu.Text = "&Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            // 
+            // btnBoQua
+            // 
+            this.btnBoQua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBoQua.Location = new System.Drawing.Point(9, 237);
+            this.btnBoQua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBoQua.Name = "btnBoQua";
+            this.btnBoQua.Size = new System.Drawing.Size(118, 36);
+            this.btnBoQua.TabIndex = 45;
+            this.btnBoQua.Text = "&Bỏ Qua";
+            this.btnBoQua.UseVisualStyleBackColor = false;
             // 
             // btnHienThiDS
             // 
             this.btnHienThiDS.BackColor = System.Drawing.SystemColors.Control;
-            this.btnHienThiDS.Location = new System.Drawing.Point(553, 17);
+            this.btnHienThiDS.Location = new System.Drawing.Point(9, 290);
             this.btnHienThiDS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHienThiDS.Name = "btnHienThiDS";
-            this.btnHienThiDS.Size = new System.Drawing.Size(75, 37);
-            this.btnHienThiDS.TabIndex = 12;
+            this.btnHienThiDS.Size = new System.Drawing.Size(118, 36);
+            this.btnHienThiDS.TabIndex = 47;
             this.btnHienThiDS.Text = "&Hiển Thị Danh Sách";
             this.btnHienThiDS.UseVisualStyleBackColor = false;
             // 
             // btnDong
             // 
             this.btnDong.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDong.Location = new System.Drawing.Point(654, 17);
+            this.btnDong.Location = new System.Drawing.Point(9, 396);
             this.btnDong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(65, 37);
-            this.btnDong.TabIndex = 11;
+            this.btnDong.Size = new System.Drawing.Size(118, 36);
+            this.btnDong.TabIndex = 46;
             this.btnDong.Text = "&Đóng";
             this.btnDong.UseVisualStyleBackColor = false;
-            // 
-            // btnBoQua
-            // 
-            this.btnBoQua.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBoQua.Location = new System.Drawing.Point(452, 17);
-            this.btnBoQua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(65, 37);
-            this.btnBoQua.TabIndex = 10;
-            this.btnBoQua.Text = "&Bỏ Qua";
-            this.btnBoQua.UseVisualStyleBackColor = false;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLuu.Location = new System.Drawing.Point(350, 17);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(65, 37);
-            this.btnLuu.TabIndex = 9;
-            this.btnLuu.Text = "&Lưu";
-            this.btnLuu.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSua.Location = new System.Drawing.Point(248, 17);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(65, 37);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "&Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
-            this.btnXoa.Location = new System.Drawing.Point(147, 17);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(65, 37);
-            this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "&Xoá";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.SystemColors.Control;
-            this.btnThem.Location = new System.Drawing.Point(46, 17);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(65, 37);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "&Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            // 
-            // dgvHangHoa
-            // 
-            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHangHoa.Location = new System.Drawing.Point(0, 272);
-            this.dgvHangHoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvHangHoa.Name = "dgvHangHoa";
-            this.dgvHangHoa.RowHeadersWidth = 82;
-            this.dgvHangHoa.RowTemplate.Height = 33;
-            this.dgvHangHoa.Size = new System.Drawing.Size(805, 157);
-            this.dgvHangHoa.TabIndex = 2;
             // 
             // frmDanhMuc_HangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 501);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(792, 473);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvHangHoa);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmDanhMuc_HangHoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hàng Hoá";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -400,15 +418,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvHangHoa;
-        private System.Windows.Forms.Button btnHienThiDS;
-        private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnBoQua;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnMo;
         private System.Windows.Forms.PictureBox picAnh;
         private System.Windows.Forms.ComboBox cbxMaChatLuong;
@@ -428,5 +438,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDanhMucHangHoa;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnXuatFileExcel;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnBoQua;
+        private System.Windows.Forms.Button btnHienThiDS;
+        private System.Windows.Forms.Button btnDong;
     }
 }

@@ -41,6 +41,18 @@ namespace Quanlybanhang
             ChatLieu sp = new ChatLieu();
             sp.MaChatLieu = txtMaChatLieu.Text;
             sp.TenChatLieu = txtTenChatLieu.Text;
+            if (txtMaChatLieu.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mã chất liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaChatLieu.Focus(); //Lệnh đặt con trỏ ngay vị trí đó
+                return;
+            }
+            if (txtTenChatLieu.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên chất liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTenChatLieu.Focus(); //Lệnh đặt con trỏ ngay vị trí đó
+                return;
+            }
             qlbh.ChatLieux.Add(sp);
             qlbh.SaveChanges();
             LoadChatLieu();
@@ -48,17 +60,74 @@ namespace Quanlybanhang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            ChatLieu xoasp = (from sp in qlbh.ChatLieux
-                              where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
-                              select sp).Single<ChatLieu>();
-            qlbh.ChatLieux.Remove(xoasp);
-            qlbh.SaveChanges();
-            LoadChatLieu();
+            if (dgvChatLieu.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtMaChatLieu.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ChatLieu xoasp = (from sp in qlbh.ChatLieux
+                                  where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
+                                  select sp).Single<ChatLieu>();
+                qlbh.ChatLieux.Remove(xoasp);
+                qlbh.SaveChanges();
+                LoadChatLieu();
+                MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
         }
 
         private void frmDanhMuc_ChatLieu_Load(object sender, EventArgs e)
         {
             LoadChatLieu();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            ChatLieu suasp = (from sp in qlbh.ChatLieux
+                              where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
+                              select sp).Single<ChatLieu>();
+            suasp.TenChatLieu = txtTenChatLieu.Text;
+            qlbh.SaveChanges();
+            LoadChatLieu();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnXuatFileExcel_Click(object sender, EventArgs e)
+        {
+            if (dgvChatLieu.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dgvChatLieu.Columns.Count + 1; i++) //Duyệt theo cột
+                {
+                    excel.Cells[1, i] = dgvChatLieu.Columns[i - 1].HeaderText;
+                }
+                for (int i = 0; i < dgvChatLieu.Rows.Count; i++)//Duyệt theo dòng
+                {
+                    for (int j = 0; j < dgvChatLieu.Columns.Count; j++)
+                    {
+                        excel.Cells[i + 2, j + 1] = dgvChatLieu.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                excel.Columns.AutoFit();
+                excel.Visible = true;
+            }
+        }
+
+        private void btnHienThiDS_Click(object sender, EventArgs e)
+        {
+            dgvChatLieu
         }
     }
 }

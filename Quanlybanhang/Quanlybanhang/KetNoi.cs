@@ -20,11 +20,11 @@ namespace Quanlybanhang
             Con.Open();
             if (Con.State == ConnectionState.Open)
             {
-                MessageBox.Show("Kết nối thành công");
+                MessageBox.Show("Kết nối thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Kết nối thất bại");
+                MessageBox.Show("Kết nối thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public static void Disconnect()

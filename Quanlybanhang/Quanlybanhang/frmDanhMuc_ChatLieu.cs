@@ -53,6 +53,15 @@ namespace Quanlybanhang
                 txtTenChatLieu.Focus(); //Lệnh đặt con trỏ ngay vị trí đó
                 return;
             }
+
+            for (int i = 0; i < dgvChatLieu.Rows.Count; i++)
+            {
+                if (txtMaChatLieu.Text == dgvChatLieu.Rows[i].Cells[0].Value.ToString())
+                {
+                    MessageBox.Show("Trùng dữ liệu", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    return;
+                }
+            }
             //Thêm cái khi thêm nếu có MaChatLieu rồi thì thông báo trùng
             qlbh.ChatLieux.Add(sp);
             qlbh.SaveChanges();

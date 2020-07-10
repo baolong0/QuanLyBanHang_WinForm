@@ -34,5 +34,23 @@ namespace Quanlybanhang
             frmChatLieu.Show(); //Showdialog hiển thị, khác với show đó là showdialog khi tắt form mới làm tiếp được
 
         }
+
+        private void mnuDanhMuc_HangHoa_Click(object sender, EventArgs e)
+        {
+            frmDanhMuc_HangHoa frmHangHoa = new frmDanhMuc_HangHoa();
+            frmHangHoa.Show();
+        }
+
+        private void mnuDanhMuc_KhachHang_Click(object sender, EventArgs e)
+        {
+            frmDanhMuc_KhachHang frmKhachHang = new frmDanhMuc_KhachHang();
+            frmKhachHang.Show();
+        }
+
+        private void mnuDanhMuc_NhanVien_Click(object sender, EventArgs e)
+        {
+            frmDanhMuc_NhanVien frmNhanVien = new frmDanhMuc_NhanVien();
+            frmNhanVien.Show();
+        }
     }
 }

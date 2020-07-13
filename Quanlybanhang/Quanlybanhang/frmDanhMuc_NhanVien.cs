@@ -39,11 +39,12 @@ namespace Quanlybanhang
                            nv.DienThoai,
                            nv.NgaySinh,
                        };
+
             dgvNhanVien.DataSource = null;
             dgvNhanVien.DataSource = dsnv.ToList();
         }
 
-        
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             NhanVien nv = new NhanVien();
@@ -109,11 +110,13 @@ namespace Quanlybanhang
             if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 NhanVien xoanv = (from nv in qlbh.NhanViens
-                              where nv.MaNhanVien == txtMaNhanVien.Text.Trim()
-                              select nv).Single<NhanVien>();
+                                  where nv.MaNhanVien == txtMaNhanVien.Text.Trim()
+                                  select nv).Single<NhanVien>();
+
                 qlbh.NhanViens.Remove(xoanv);
                 qlbh.SaveChanges();
                 LoadNhanVien();
+
                 MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -131,33 +134,42 @@ namespace Quanlybanhang
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            NhanVien suanv = (from nv in qlbh.NhanViens
-                              where nv.MaNhanVien == txtMaNhanVien.Text.Trim()
-                              select nv).Single<NhanVien>();
+            int index = dgvNhanVien.CurrentCell.RowIndex;
 
-            suanv.TenNhanVien = txtTenNhanVien.Text;
-            suanv.DiaChi = txtDiaChi.Text;
-            suanv.DienThoai = maskDienThoai.Text;
-            suanv.NgaySinh = dtpNgaySinh.Value;
-            suanv.GioiTinh = chkGioiTinh.Checked.ToString();
-
-            void Kiemtragioitinh()
+            if (dgvNhanVien.Rows[index].Cells[0].Value.ToString() == txtMaNhanVien.Text.Trim())
             {
-                if (chkGioiTinh.Checked == true)
+                NhanVien suanv = (from nv in qlbh.NhanViens
+                                  where nv.MaNhanVien == txtMaNhanVien.Text.Trim()
+                                  select nv).Single<NhanVien>();
+
+                suanv.TenNhanVien = txtTenNhanVien.Text;
+                suanv.DiaChi = txtDiaChi.Text;
+                suanv.DienThoai = maskDienThoai.Text;
+                suanv.NgaySinh = dtpNgaySinh.Value;
+                suanv.GioiTinh = chkGioiTinh.Checked.ToString();
+
+                void Kiemtragioitinh()
                 {
-                    suanv.GioiTinh = "Nam";
+                    if (chkGioiTinh.Checked == true)
+                    {
+                        suanv.GioiTinh = "Nam";
+                    }
+                    else
+                    {
+                        suanv.GioiTinh = "Nữ";
+                    }
                 }
-                else
-                {
-                    suanv.GioiTinh = "Nữ";
-                }
+
+                Kiemtragioitinh();
+                qlbh.SaveChanges();
+                LoadNhanVien();
+            }
+            else
+            {
+                MessageBox.Show("Không được sửa mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            Kiemtragioitinh();
-            qlbh.SaveChanges();
-            LoadNhanVien();
         }
-       
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
            dgvNhanVien.DataSource = qlbh.NhanViens.Where(x => x.MaNhanVien.Contains(txtMaNhanVien.Text)).ToList();    

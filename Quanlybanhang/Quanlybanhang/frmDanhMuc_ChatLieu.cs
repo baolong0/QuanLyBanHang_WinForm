@@ -100,12 +100,24 @@ namespace Quanlybanhang
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            ChatLieu suasp = (from sp in qlbh.ChatLieux
-                              where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
-                              select sp).Single<ChatLieu>();
-            suasp.TenChatLieu = txtTenChatLieu.Text;
-            qlbh.SaveChanges();
-            LoadChatLieu();
+            
+
+            int index = dgvChatLieu.CurrentCell.RowIndex;
+
+            if (dgvChatLieu.Rows[index].Cells[0].Value.ToString() == txtMaChatLieu.Text.Trim())
+            {
+                ChatLieu suasp = (from sp in qlbh.ChatLieux
+                                  where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
+                                  select sp).Single<ChatLieu>();
+                suasp.TenChatLieu = txtTenChatLieu.Text;
+                
+                qlbh.SaveChanges();
+                LoadChatLieu();
+            }
+            else
+            {
+                MessageBox.Show("Không được sửa mã chất liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnDong_Click(object sender, EventArgs e)

@@ -154,18 +154,31 @@ namespace Quanlybanhang
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            Hang suasp = (from sp in qlbh.Hangs
+           
+
+
+            int index = dgvHangHoa.CurrentCell.RowIndex;
+
+            if (dgvHangHoa.Rows[index].Cells[0].Value.ToString() == txtMaHang.Text.Trim())
+            {
+                Hang suasp = (from sp in qlbh.Hangs
                               where sp.MaHang == txtMaHang.Text.Trim()
                               select sp).Single<Hang>();
-            suasp.TenHang = txtTenHang.Text;
-            suasp.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-            suasp.MaChatLieu = cbxMaChatLieu.Text;
-            suasp.DonGiaNhap = Convert.ToInt32(txtDonGiaNhap.Text);
-            suasp.DonGiaBan = Convert.ToInt32(txtDonGiaBan.Text);
-            suasp.Anh = txtAnh.Text;
-            suasp.GhiChu = txtGhiChu.Text;
-            qlbh.SaveChanges();
-            LoadHangHoa();
+                suasp.TenHang = txtTenHang.Text;
+                suasp.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                suasp.MaChatLieu = cbxMaChatLieu.Text;
+                suasp.DonGiaNhap = Convert.ToInt32(txtDonGiaNhap.Text);
+                suasp.DonGiaBan = Convert.ToInt32(txtDonGiaBan.Text);
+                suasp.Anh = txtAnh.Text;
+                suasp.GhiChu = txtGhiChu.Text;
+
+                qlbh.SaveChanges();
+                LoadHangHoa();
+            }
+            else
+            {
+                MessageBox.Show("Không được sửa mã hàng hoá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnXuatFileExcel_Click(object sender, EventArgs e)

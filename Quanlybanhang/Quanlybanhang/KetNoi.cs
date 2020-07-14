@@ -10,7 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Quanlybanhang
 {
-    class Functions
+    public class Functions
     {
         public static SqlConnection Con; //Khai báo đối tượng kết nối
         public static void Connect()//Connect

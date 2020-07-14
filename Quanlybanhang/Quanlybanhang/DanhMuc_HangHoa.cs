@@ -92,7 +92,7 @@ namespace Quanlybanhang
                                  cl.MaChatLieu
                              };
             cbxMaChatLieu.DataSource = machatlieu.ToList();
-            cbxMaChatLieu.DisplayMember = "MaChatLieu";
+            cbxMaChatLieu.DisplayMember = "TenChatLieu";
             cbxMaChatLieu.ValueMember = "MaChatLieu";
         }
         private void btnMo_Click(object sender, EventArgs e)

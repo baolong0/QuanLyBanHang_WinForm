@@ -52,5 +52,11 @@ namespace Quanlybanhang
             frmDanhMuc_NhanVien frmNhanVien = new frmDanhMuc_NhanVien();
             frmNhanVien.Show();
         }
+
+        private void mnuHoaDon_HoaDonBan_Click(object sender, EventArgs e)
+        {
+            frmHoaDonBan frmHoaDonBan = new frmHoaDonBan();
+            frmHoaDonBan.Show();
+        }
     }
 }

@@ -68,7 +68,6 @@
             this.mnuTroGiup});
             this.mnu.Location = new System.Drawing.Point(0, 0);
             this.mnu.Name = "mnu";
-            this.mnu.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.mnu.Size = new System.Drawing.Size(1060, 42);
             this.mnu.TabIndex = 0;
             this.mnu.Text = "menuStrip1";
@@ -145,8 +144,9 @@
             // mnuHoaDon_HoaDonBan
             // 
             this.mnuHoaDon_HoaDonBan.Name = "mnuHoaDon_HoaDonBan";
-            this.mnuHoaDon_HoaDonBan.Size = new System.Drawing.Size(291, 44);
+            this.mnuHoaDon_HoaDonBan.Size = new System.Drawing.Size(359, 44);
             this.mnuHoaDon_HoaDonBan.Text = "&Hóa Đơn Bán";
+            this.mnuHoaDon_HoaDonBan.Click += new System.EventHandler(this.mnuHoaDon_HoaDonBan_Click);
             // 
             // mnuTimKiem
             // 
@@ -250,7 +250,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "Quản Lý Bán Hàng";
             this.Load += new System.EventHandler(this.frmMain_Load);

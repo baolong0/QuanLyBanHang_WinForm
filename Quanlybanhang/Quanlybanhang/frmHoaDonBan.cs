@@ -187,6 +187,8 @@ namespace Quanlybanhang
             List<Khach> khachlist = qlbh.Khaches.ToList<Khach>();
             Khach khachchon = new Khach();
             txtTenKhachHang.Text = khachlist[0].TenKhach;
+            txtDiaChi.Text = khachlist[0].DiaChi;
+            maskSoDienThoai.Text = khachlist[0].DienThoai;
             khachchon.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
             for (int i = 0; i < khachlist.Count; i++)
             {
@@ -194,6 +196,8 @@ namespace Quanlybanhang
                 if (khachchon.MaKhach== nvlist.MaKhach)
                 {
                     txtTenKhachHang.Text = nvlist.TenKhach;
+                    txtDiaChi.Text = nvlist.DiaChi;
+                    maskSoDienThoai.Text = nvlist.DienThoai;
                     break;
                 }
             }

@@ -206,14 +206,50 @@ namespace Quanlybanhang
 
         private void txtGiamGia_TextChanged(object sender, EventArgs e)
         {
-            if (txtGiamGia != null && txtDonGia != null && txtSoLuong != null)
+            try
             {
-                int SoLuong = 0, DonGia = 0, GiamGia = 0;
-                SoLuong = int.Parse(txtSoLuong.Text);
-                DonGia = int.Parse(txtDonGia.Text);
-                GiamGia = int.Parse(txtGiamGia.Text);
-                txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
+                if (txtGiamGia != null && txtDonGia != null && txtSoLuong != null)
+                {
+                    int SoLuong = 1, DonGia = 1, GiamGia = 1;
+                    SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                    DonGia = Convert.ToInt32(txtDonGia.Text);
+                    GiamGia = Convert.ToInt32(txtGiamGia.Text);
+                    txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
+                }
             }
+            catch { }
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtGiamGia != null && txtDonGia != null && txtSoLuong != null)
+                {
+                    int SoLuong = 1, DonGia = 1, GiamGia = 1;
+                    SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                    DonGia = Convert.ToInt32(txtDonGia.Text);
+                    GiamGia = Convert.ToInt32(txtGiamGia.Text);
+                    txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
+                }
+            }
+            catch { }
+        }
+
+        private void txtDonGia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtGiamGia != null && txtDonGia != null && txtSoLuong != null)
+                {
+                    int SoLuong = 1, DonGia = 1, GiamGia = 1;
+                    SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                    DonGia = Convert.ToInt32(txtDonGia.Text);
+                    GiamGia = Convert.ToInt32(txtGiamGia.Text);
+                    txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
+                }
+            }
+            catch { }
         }
     }
 }

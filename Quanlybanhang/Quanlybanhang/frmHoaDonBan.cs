@@ -17,22 +17,6 @@ namespace Quanlybanhang
         {
             InitializeComponent();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvHoaDonBanHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmHoaDonBan_Load(object sender, EventArgs e)
         {
             LoadHoaDonBan();
@@ -43,7 +27,8 @@ namespace Quanlybanhang
 
         void LoadHoaDonBan()
         {
-            var hoadon = from hd in qlbh.Hangs join hd2 in qlbh.ChiTietHoaDons on hd.MaHang equals hd2.MaHang
+            var hoadon = from hd in qlbh.Hangs
+                         join hd2 in qlbh.ChiTietHoaDons on hd.MaHang equals hd2.MaHang
                          select new
                          {
                              hd.MaHang,
@@ -68,7 +53,7 @@ namespace Quanlybanhang
             cbxMaNhanVien.DataSource = manv.ToList();
             cbxMaNhanVien.DisplayMember = "TenNhanVien";
             cbxMaNhanVien.ValueMember = "MaNhanVien";
-            
+
         }
         void LoadMaKhachHang()
         {
@@ -95,11 +80,6 @@ namespace Quanlybanhang
             cbxMaHang.ValueMember = "MaHang";
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvHoaDonBanHang_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             cbxMaHang.SelectedValue = dgvHoaDonBanHang.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -112,52 +92,54 @@ namespace Quanlybanhang
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
         {
-            ChiTietHoaDon cthd = new ChiTietHoaDon();
-            cthd.GiamGia = Convert.ToInt32(txtGiamGia.Text);
-            cthd.ThanhTien = Convert.ToInt32(txtThanhTien.Text);
+            /*
+             ChiTietHoaDon cthd = new ChiTietHoaDon();
+             cthd.GiamGia = Convert.ToInt32(txtGiamGia.Text);
+             cthd.ThanhTien = Convert.ToInt32(txtThanhTien.Text);
 
-            Hang hh = new Hang();
-            hh.MaHang = cbxMaHang.SelectedValue.ToString();
-            hh.TenHang = txtTenHang.Text;
-            hh.DonGiaBan = Convert.ToInt32(txtDonGia.Text);
-            hh.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+             Hang hh = new Hang();
+             hh.MaHang = cbxMaHang.SelectedValue.ToString();
+             hh.TenHang = txtTenHang.Text;
+             hh.DonGiaBan = Convert.ToInt32(txtDonGia.Text);
+             hh.SoLuong = Convert.ToInt32(txtSoLuong.Text);
 
-            HoaDonBan hd = new HoaDonBan();
-            hd.MaHDBan = txtMaHoaDon.Text;
-            hd.NgayBan = dtpNgayBan.Value;
-            hd.MaNhanVien = cbxMaNhanVien.SelectedValue.ToString();
+             HoaDonBan hd = new HoaDonBan();
+             hd.MaHDBan = txtMaHoaDon.Text;
+             hd.NgayBan = dtpNgayBan.Value;
+             hd.MaNhanVien = cbxMaNhanVien.SelectedValue.ToString();
 
-            NhanVien nv = new NhanVien();
-            nv.TenNhanVien = txtTenNhanVien.Text;
+             NhanVien nv = new NhanVien();
+             nv.TenNhanVien = txtTenNhanVien.Text;
 
-            Khach kh = new Khach();
-            kh.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
-            kh.TenKhach = txtTenKhachHang.Text;
-            kh.DiaChi = txtDiaChi.Text;
-            kh.DienThoai = maskSoDienThoai.Text;
+             Khach kh = new Khach();
+             kh.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
+             kh.TenKhach = txtTenKhachHang.Text;
+             kh.DiaChi = txtDiaChi.Text;
+             kh.DienThoai = maskSoDienThoai.Text;
 
-            if (txtTenHang.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập tên hàng hoá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtTenHang.Focus(); //Lệnh đặt con trỏ ngay vị trí đó
-                return;
-            }
+             if (txtTenHang.Text.Trim().Length == 0)
+             {
+                 MessageBox.Show("Bạn phải nhập tên hàng hoá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 txtTenHang.Focus(); //Lệnh đặt con trỏ ngay vị trí đó
+                 return;
+             }
 
-            for (int i = 0; i < dgvHoaDonBanHang.Rows.Count; i++)
-            {
-                if (txtTenHang.Text == dgvHoaDonBanHang.Rows[i].Cells[0].Value.ToString())
-                {
-                    MessageBox.Show("Trùng dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-            }
-            //Thêm cái khi thêm nếu có MaChatLieu rồi thì thông báo trùng
-            qlbh.Hangs.Add(hh);
-            qlbh.ChiTietHoaDons.Add(cthd);
-            qlbh.HoaDonBans.Add(hd);
-            qlbh.NhanViens.Add(nv);
-            qlbh.SaveChanges();
-            LoadHoaDonBan();
+             for (int i = 0; i < dgvHoaDonBanHang.Rows.Count; i++)
+             {
+                 if (txtTenHang.Text == dgvHoaDonBanHang.Rows[i].Cells[0].Value.ToString())
+                 {
+                     MessageBox.Show("Trùng dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     return;
+                 }
+             }
+             //Thêm cái khi thêm nếu có MaChatLieu rồi thì thông báo trùng
+             qlbh.Hangs.Add(hh);
+             qlbh.ChiTietHoaDons.Add(cthd);
+             qlbh.HoaDonBans.Add(hd);
+             qlbh.NhanViens.Add(nv);
+             qlbh.SaveChanges();
+             LoadHoaDonBan();
+             */
         }
 
         private void cbxMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,13 +175,44 @@ namespace Quanlybanhang
             for (int i = 0; i < khachlist.Count; i++)
             {
                 Khach nvlist = khachlist[i];
-                if (khachchon.MaKhach== nvlist.MaKhach)
+                if (khachchon.MaKhach == nvlist.MaKhach)
                 {
                     txtTenKhachHang.Text = nvlist.TenKhach;
                     txtDiaChi.Text = nvlist.DiaChi;
                     maskSoDienThoai.Text = nvlist.DienThoai;
                     break;
                 }
+            }
+        }
+
+        private void cbxMaHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Hang> hanglist = qlbh.Hangs.ToList<Hang>();
+            Hang hangchon = new Hang();
+            txtTenHang.Text = hanglist[0].TenHang;
+            txtDonGia.Text = hanglist[0].DonGiaBan.ToString();
+            hangchon.MaHang = cbxMaHang.SelectedValue.ToString();
+            for (int i = 0; i < hanglist.Count; i++)
+            {
+                Hang nvlist = hanglist[i];
+                if (hangchon.MaHang == nvlist.MaHang)
+                {
+                    txtTenHang.Text = nvlist.TenHang;
+                    txtDonGia.Text = nvlist.DonGiaBan.ToString();
+                    break;
+                }
+            }
+        }
+
+        private void txtGiamGia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGiamGia != null && txtDonGia != null && txtSoLuong != null)
+            {
+                int SoLuong = 0, DonGia = 0, GiamGia = 0;
+                SoLuong = int.Parse(txtSoLuong.Text);
+                DonGia = int.Parse(txtDonGia.Text);
+                GiamGia = int.Parse(txtGiamGia.Text);
+                txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
             }
         }
     }

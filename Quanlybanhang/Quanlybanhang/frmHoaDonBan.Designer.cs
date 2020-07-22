@@ -34,6 +34,7 @@
             this.cbxMaHoaDon = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxMaKhachHang = new System.Windows.Forms.ComboBox();
             this.maskSoDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.cbxMaNhanVien = new System.Windows.Forms.ComboBox();
@@ -75,7 +76,6 @@
             this.lblTongTien = new System.Windows.Forms.Label();
             this.lblBangChu = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.cbxMaKhachHang = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -177,7 +177,16 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chung";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbxMaKhachHang
+            // 
+            this.cbxMaKhachHang.FormattingEnabled = true;
+            this.cbxMaKhachHang.Location = new System.Drawing.Point(489, 24);
+            this.cbxMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxMaKhachHang.Name = "cbxMaKhachHang";
+            this.cbxMaKhachHang.Size = new System.Drawing.Size(198, 21);
+            this.cbxMaKhachHang.TabIndex = 16;
+            this.cbxMaKhachHang.SelectedIndexChanged += new System.EventHandler(this.cbxMaKhachHang_SelectedIndexChanged);
             // 
             // maskSoDienThoai
             // 
@@ -356,7 +365,6 @@
             this.dgvHoaDonBanHang.RowTemplate.Height = 33;
             this.dgvHoaDonBanHang.Size = new System.Drawing.Size(796, 117);
             this.dgvHoaDonBanHang.TabIndex = 2;
-            this.dgvHoaDonBanHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonBanHang_CellContentClick);
             this.dgvHoaDonBanHang.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonBanHang_RowEnter);
             // 
             // panel3
@@ -388,6 +396,7 @@
             this.cbxMaHang.Name = "cbxMaHang";
             this.cbxMaHang.Size = new System.Drawing.Size(137, 21);
             this.cbxMaHang.TabIndex = 11;
+            this.cbxMaHang.SelectedIndexChanged += new System.EventHandler(this.cbxMaHang_SelectedIndexChanged);
             // 
             // txtThanhTien
             // 
@@ -397,7 +406,6 @@
             this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(137, 20);
             this.txtThanhTien.TabIndex = 10;
-            this.txtThanhTien.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtGiamGia
             // 
@@ -406,6 +414,7 @@
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(137, 20);
             this.txtGiamGia.TabIndex = 9;
+            this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
             // txtDonGia
             // 
@@ -590,7 +599,6 @@
             this.lblBangChu.Size = new System.Drawing.Size(54, 13);
             this.lblBangChu.TabIndex = 1;
             this.lblBangChu.Text = "Bằng Chữ";
-            this.lblBangChu.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -603,16 +611,6 @@
             this.label15.Size = new System.Drawing.Size(166, 13);
             this.label15.TabIndex = 0;
             this.label15.Text = "Nháy Đúp Vào Một Dòng Để Xoá";
-            // 
-            // cbxMaKhachHang
-            // 
-            this.cbxMaKhachHang.FormattingEnabled = true;
-            this.cbxMaKhachHang.Location = new System.Drawing.Point(489, 24);
-            this.cbxMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxMaKhachHang.Name = "cbxMaKhachHang";
-            this.cbxMaKhachHang.Size = new System.Drawing.Size(198, 21);
-            this.cbxMaKhachHang.TabIndex = 16;
-            this.cbxMaKhachHang.SelectedIndexChanged += new System.EventHandler(this.cbxMaKhachHang_SelectedIndexChanged);
             // 
             // frmHoaDonBan
             // 

@@ -38,7 +38,6 @@
             this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.cbxMaNhanVien = new System.Windows.Forms.ComboBox();
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
-            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
@@ -76,6 +75,7 @@
             this.lblTongTien = new System.Windows.Forms.Label();
             this.lblBangChu = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.cbxMaKhachHang = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -153,11 +153,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxMaKhachHang);
             this.groupBox1.Controls.Add(this.maskSoDienThoai);
             this.groupBox1.Controls.Add(this.dtpNgayBan);
             this.groupBox1.Controls.Add(this.cbxMaNhanVien);
             this.groupBox1.Controls.Add(this.txtTenNhanVien);
-            this.groupBox1.Controls.Add(this.txtMaKhachHang);
             this.groupBox1.Controls.Add(this.txtTenKhachHang);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtMaHoaDon);
@@ -214,14 +214,6 @@
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(198, 20);
             this.txtTenNhanVien.TabIndex = 12;
-            // 
-            // txtMaKhachHang
-            // 
-            this.txtMaKhachHang.Location = new System.Drawing.Point(489, 29);
-            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(198, 20);
-            this.txtMaKhachHang.TabIndex = 11;
             // 
             // txtTenKhachHang
             // 
@@ -526,6 +518,7 @@
             this.btnDong.TabIndex = 8;
             this.btnDong.Text = "&Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnInHoaDon
             // 
@@ -611,6 +604,16 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Nháy Đúp Vào Một Dòng Để Xoá";
             // 
+            // cbxMaKhachHang
+            // 
+            this.cbxMaKhachHang.FormattingEnabled = true;
+            this.cbxMaKhachHang.Location = new System.Drawing.Point(489, 24);
+            this.cbxMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxMaKhachHang.Name = "cbxMaKhachHang";
+            this.cbxMaKhachHang.Size = new System.Drawing.Size(198, 21);
+            this.cbxMaKhachHang.TabIndex = 16;
+            this.cbxMaKhachHang.SelectedIndexChanged += new System.EventHandler(this.cbxMaKhachHang_SelectedIndexChanged);
+            // 
             // frmHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,7 +658,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgayBan;
         private System.Windows.Forms.ComboBox cbxMaNhanVien;
         private System.Windows.Forms.TextBox txtTenNhanVien;
-        private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtMaHoaDon;
@@ -692,5 +694,6 @@
         private System.Windows.Forms.Button btnHuyHoaDon;
         private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.Button btnThemHoaDon;
+        private System.Windows.Forms.ComboBox cbxMaKhachHang;
     }
 }

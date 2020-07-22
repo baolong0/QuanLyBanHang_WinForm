@@ -38,6 +38,7 @@ namespace Quanlybanhang
             LoadHoaDonBan();
             LoadMaHang();
             LoadMaNhanVien();
+            LoadMaKhachHang();
         }
 
         void LoadHoaDonBan()
@@ -68,6 +69,18 @@ namespace Quanlybanhang
             cbxMaNhanVien.DisplayMember = "TenNhanVien";
             cbxMaNhanVien.ValueMember = "MaNhanVien";
             
+        }
+        void LoadMaKhachHang()
+        {
+            var makh = from kh in qlbh.Khaches
+                       select new
+                       {
+                           kh.MaKhach
+                       };
+            cbxMaKhachHang.DataSource = makh.ToList();
+            cbxMaKhachHang.DisplayMember = "TenKhach";
+            cbxMaKhachHang.ValueMember = "MaKhach";
+
         }
 
         void LoadMaHang()
@@ -118,7 +131,7 @@ namespace Quanlybanhang
             nv.TenNhanVien = txtTenNhanVien.Text;
 
             Khach kh = new Khach();
-            kh.MaKhach = txtMaKhachHang.Text;
+            kh.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
             kh.TenKhach = txtTenKhachHang.Text;
             kh.DiaChi = txtDiaChi.Text;
             kh.DienThoai = maskSoDienThoai.Text;
@@ -149,7 +162,41 @@ namespace Quanlybanhang
 
         private void cbxMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            List<NhanVien> nhanvienlist = qlbh.NhanViens.ToList<NhanVien>();
+            NhanVien nvchon = new NhanVien();
+            txtTenNhanVien.Text = nhanvienlist[0].TenNhanVien;
+            nvchon.MaNhanVien = cbxMaNhanVien.SelectedValue.ToString();
+            for (int i = 0; i < nhanvienlist.Count; i++)
+            {
+                NhanVien nvlist = nhanvienlist[i];
+                if (nvchon.MaNhanVien == nvlist.MaNhanVien)
+                {
+                    txtTenNhanVien.Text = nvlist.TenNhanVien;
+                    break;
+                }
+            }
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cbxMaKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Khach> khachlist = qlbh.Khaches.ToList<Khach>();
+            Khach khachchon = new Khach();
+            txtTenKhachHang.Text = khachlist[0].TenKhach;
+            khachchon.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
+            for (int i = 0; i < khachlist.Count; i++)
+            {
+                Khach nvlist = khachlist[i];
+                if (khachchon.MaKhach== nvlist.MaKhach)
+                {
+                    txtTenKhachHang.Text = nvlist.TenKhach;
+                    break;
+                }
+            }
         }
     }
 }

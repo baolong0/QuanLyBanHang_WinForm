@@ -16,7 +16,7 @@ namespace Quanlybanhang
         public static void Connect()//Connect
         {
             Con = new SqlConnection();
-            Con.ConnectionString = "Data Source=APPLE3F59;initial catalog=Quanlybanhang; Integrated Security=True";
+            Con.ConnectionString = "Data Source=DESKTOP-66RFOG7;initial catalog=Quanlybanhang; Integrated Security=True";
             Con.Open();
             if (Con.State == ConnectionState.Open)
             {

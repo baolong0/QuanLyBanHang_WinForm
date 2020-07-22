@@ -423,7 +423,6 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(137, 20);
             this.txtDonGia.TabIndex = 8;
-            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             // 
             // txtTenHang
             // 
@@ -440,7 +439,6 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(137, 20);
             this.txtSoLuong.TabIndex = 6;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // label14
             // 

@@ -190,6 +190,7 @@
             // 
             // maskSoDienThoai
             // 
+            this.maskSoDienThoai.Enabled = false;
             this.maskSoDienThoai.Location = new System.Drawing.Point(489, 127);
             this.maskSoDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.maskSoDienThoai.Mask = "(999) 000-0000";
@@ -218,6 +219,7 @@
             // 
             // txtTenNhanVien
             // 
+            this.txtTenNhanVien.Enabled = false;
             this.txtTenNhanVien.Location = new System.Drawing.Point(131, 127);
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
@@ -226,6 +228,7 @@
             // 
             // txtTenKhachHang
             // 
+            this.txtTenKhachHang.Enabled = false;
             this.txtTenKhachHang.Location = new System.Drawing.Point(489, 61);
             this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
@@ -234,6 +237,7 @@
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Location = new System.Drawing.Point(489, 95);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
@@ -418,6 +422,7 @@
             // 
             // txtDonGia
             // 
+            this.txtDonGia.Enabled = false;
             this.txtDonGia.Location = new System.Drawing.Point(596, 10);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtDonGia.Name = "txtDonGia";
@@ -427,6 +432,7 @@
             // 
             // txtTenHang
             // 
+            this.txtTenHang.Enabled = false;
             this.txtTenHang.Location = new System.Drawing.Point(358, 12);
             this.txtTenHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenHang.Name = "txtTenHang";
@@ -550,6 +556,7 @@
             this.btnHuyHoaDon.TabIndex = 6;
             this.btnHuyHoaDon.Text = "&Huỷ Hoá Đơn";
             this.btnHuyHoaDon.UseVisualStyleBackColor = true;
+            this.btnHuyHoaDon.Click += new System.EventHandler(this.btnHuyHoaDon_Click);
             // 
             // btnLuuHoaDon
             // 

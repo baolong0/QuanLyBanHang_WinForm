@@ -58,5 +58,17 @@ namespace Quanlybanhang
             frmHoaDonBan frmHoaDonBan = new frmHoaDonBan();
             frmHoaDonBan.Show();
         }
+
+        private void mnuTimKiem_HoaDon_Click(object sender, EventArgs e)
+        {
+            frmTimKiemHoaDon frmTimKiemHoaDon = new frmTimKiemHoaDon();
+            frmTimKiemHoaDon.Show();
+        }
+
+        private void mnuBaoCao_DoanhThu_Click(object sender, EventArgs e)
+        {
+            frmBaoCao frmBaoCao = new frmBaoCao();
+            frmBaoCao.Show();
+        }
     }
 }

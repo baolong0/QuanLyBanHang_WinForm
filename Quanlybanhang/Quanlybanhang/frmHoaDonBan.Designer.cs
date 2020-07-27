@@ -67,6 +67,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TxtBangChu = new System.Windows.Forms.TextBox();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnHuyHoaDon = new System.Windows.Forms.Button();
@@ -510,6 +511,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.TxtBangChu);
             this.panel2.Controls.Add(this.btnDong);
             this.panel2.Controls.Add(this.btnInHoaDon);
             this.panel2.Controls.Add(this.btnHuyHoaDon);
@@ -525,6 +527,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(796, 78);
             this.panel2.TabIndex = 0;
+            // 
+            // TxtBangChu
+            // 
+            this.TxtBangChu.Enabled = false;
+            this.TxtBangChu.Location = new System.Drawing.Point(103, 13);
+            this.TxtBangChu.Name = "TxtBangChu";
+            this.TxtBangChu.Size = new System.Drawing.Size(482, 20);
+            this.TxtBangChu.TabIndex = 9;
             // 
             // btnDong
             // 
@@ -581,7 +591,7 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(662, 6);
+            this.txtTongTien.Location = new System.Drawing.Point(653, 16);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
@@ -591,7 +601,7 @@
             // lblTongTien
             // 
             this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Location = new System.Drawing.Point(594, 9);
+            this.lblTongTien.Location = new System.Drawing.Point(593, 16);
             this.lblTongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(56, 13);
@@ -602,7 +612,7 @@
             // 
             this.lblBangChu.AutoSize = true;
             this.lblBangChu.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblBangChu.Location = new System.Drawing.Point(44, 15);
+            this.lblBangChu.Location = new System.Drawing.Point(40, 16);
             this.lblBangChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBangChu.Name = "lblBangChu";
             this.lblBangChu.Size = new System.Drawing.Size(54, 13);
@@ -614,7 +624,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.SystemColors.Control;
             this.label15.ForeColor = System.Drawing.Color.Chocolate;
-            this.label15.Location = new System.Drawing.Point(421, 2);
+            this.label15.Location = new System.Drawing.Point(433, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(166, 13);
@@ -702,5 +712,6 @@
         private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.Button btnThemHoaDon;
         private System.Windows.Forms.ComboBox cbxMaKhachHang;
+        private System.Windows.Forms.TextBox TxtBangChu;
     }
 }

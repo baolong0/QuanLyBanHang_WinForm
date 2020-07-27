@@ -39,3 +39,4 @@ C:\Users\A\Documents\GitHub\QuanLyBanHang_WinForm\QuanLyBanHang_WinForm\Quanlyba
 C:\Users\A\Documents\GitHub\QuanLyBanHang_WinForm\QuanLyBanHang_WinForm\Quanlybanhang\Quanlybanhang\obj\Debug\Quanlybanhang.csproj.CopyComplete
 C:\Users\A\Documents\GitHub\QuanLyBanHang_WinForm\QuanLyBanHang_WinForm\Quanlybanhang\Quanlybanhang\obj\Debug\Quanlybanhang.exe
 C:\Users\A\Documents\GitHub\QuanLyBanHang_WinForm\QuanLyBanHang_WinForm\Quanlybanhang\Quanlybanhang\obj\Debug\Quanlybanhang.pdb
+C:\Users\A\Documents\GitHub\QuanLyBanHang_WinForm\QuanLyBanHang_WinForm\Quanlybanhang\Quanlybanhang\obj\Debug\Quanlybanhang.frmBaoCao.resources

@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.btnDong = new System.Windows.Forms.Button();
-            this.btnTimLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.lblThang = new System.Windows.Forms.Label();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.dgvTimKiemHoaDon = new System.Windows.Forms.DataGridView();
+            this.note1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemHoaDon)).BeginInit();
@@ -56,11 +56,10 @@
             // 
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.btnDong);
-            this.panel1.Controls.Add(this.btnTimLai);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 328);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(742, 85);
             this.panel1.TabIndex = 0;
@@ -79,36 +78,29 @@
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(583, 25);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDong.Location = new System.Drawing.Point(585, 29);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(101, 45);
             this.btnDong.TabIndex = 2;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
-            // 
-            // btnTimLai
-            // 
-            this.btnTimLai.Location = new System.Drawing.Point(335, 25);
-            this.btnTimLai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnTimLai.Name = "btnTimLai";
-            this.btnTimLai.Size = new System.Drawing.Size(101, 45);
-            this.btnTimLai.TabIndex = 1;
-            this.btnTimLai.Text = "Tìm Lại";
-            this.btnTimLai.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(104, 25);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimKiem.Location = new System.Drawing.Point(422, 29);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(101, 45);
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.note1);
             this.panel2.Controls.Add(this.txtTongTien);
             this.panel2.Controls.Add(this.txtMaKhachHang);
             this.panel2.Controls.Add(this.txtMaNhanVien);
@@ -123,7 +115,7 @@
             this.panel2.Controls.Add(this.lblMaHoaDon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(742, 113);
             this.panel2.TabIndex = 16;
@@ -131,7 +123,7 @@
             // txtTongTien
             // 
             this.txtTongTien.Location = new System.Drawing.Point(529, 62);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(82, 20);
             this.txtTongTien.TabIndex = 11;
@@ -139,7 +131,7 @@
             // txtMaKhachHang
             // 
             this.txtMaKhachHang.Location = new System.Drawing.Point(529, 24);
-            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.Size = new System.Drawing.Size(82, 20);
             this.txtMaKhachHang.TabIndex = 10;
@@ -147,7 +139,7 @@
             // txtMaNhanVien
             // 
             this.txtMaNhanVien.Location = new System.Drawing.Point(154, 83);
-            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.Size = new System.Drawing.Size(82, 20);
             this.txtMaNhanVien.TabIndex = 9;
@@ -155,7 +147,7 @@
             // txtNam
             // 
             this.txtNam.Location = new System.Drawing.Point(278, 47);
-            this.txtNam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNam.Margin = new System.Windows.Forms.Padding(2);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(82, 20);
             this.txtNam.TabIndex = 8;
@@ -163,7 +155,7 @@
             // txtThang
             // 
             this.txtThang.Location = new System.Drawing.Point(154, 48);
-            this.txtThang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtThang.Margin = new System.Windows.Forms.Padding(2);
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(82, 20);
             this.txtThang.TabIndex = 7;
@@ -171,7 +163,7 @@
             // txtMaHoaDon
             // 
             this.txtMaHoaDon.Location = new System.Drawing.Point(154, 10);
-            this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
             this.txtMaHoaDon.Size = new System.Drawing.Size(82, 20);
             this.txtMaHoaDon.TabIndex = 6;
@@ -241,12 +233,22 @@
             this.dgvTimKiemHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTimKiemHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTimKiemHoaDon.Location = new System.Drawing.Point(0, 113);
-            this.dgvTimKiemHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTimKiemHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTimKiemHoaDon.Name = "dgvTimKiemHoaDon";
             this.dgvTimKiemHoaDon.RowHeadersWidth = 82;
             this.dgvTimKiemHoaDon.RowTemplate.Height = 33;
             this.dgvTimKiemHoaDon.Size = new System.Drawing.Size(742, 215);
             this.dgvTimKiemHoaDon.TabIndex = 17;
+            // 
+            // note1
+            // 
+            this.note1.AutoSize = true;
+            this.note1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.note1.Location = new System.Drawing.Point(571, 90);
+            this.note1.Name = "note1";
+            this.note1.Size = new System.Drawing.Size(159, 13);
+            this.note1.TabIndex = 12;
+            this.note1.Text = "Chỉ nhập một trường để tìm kiếm";
             // 
             // frmTimKiemHoaDon
             // 
@@ -256,7 +258,7 @@
             this.Controls.Add(this.dgvTimKiemHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTimKiemHoaDon";
             this.Text = "Tìm Kiếm Hoá Đơn";
             this.panel1.ResumeLayout(false);
@@ -272,7 +274,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnTimLai;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvTimKiemHoaDon;
@@ -289,5 +290,6 @@
         private System.Windows.Forms.Label lblMaNhanVien;
         private System.Windows.Forms.Label lblThang;
         private System.Windows.Forms.Label lblMaHoaDon;
+        private System.Windows.Forms.Label note1;
     }
 }

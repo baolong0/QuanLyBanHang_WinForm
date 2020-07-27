@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.lblMaHoaDon = new System.Windows.Forms.Label();
-            this.cbxMaHoaDon = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxMaKhachHang = new System.Windows.Forms.ComboBox();
@@ -67,17 +63,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TxtBangChu = new System.Windows.Forms.TextBox();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnHuyHoaDon = new System.Windows.Forms.Button();
-            this.btnLuuHoaDon = new System.Windows.Forms.Button();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.lblTongTien = new System.Windows.Forms.Label();
-            this.lblBangChu = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,47 +79,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.lblMaHoaDon);
-            this.panel1.Controls.Add(this.cbxMaHoaDon);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 510);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 44);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(288, 7);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(80, 27);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "&Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // lblMaHoaDon
-            // 
-            this.lblMaHoaDon.AutoSize = true;
-            this.lblMaHoaDon.Location = new System.Drawing.Point(28, 17);
-            this.lblMaHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(68, 13);
-            this.lblMaHoaDon.TabIndex = 1;
-            this.lblMaHoaDon.Text = "Mã Hoá Đơn";
-            // 
-            // cbxMaHoaDon
-            // 
-            this.cbxMaHoaDon.FormattingEnabled = true;
-            this.cbxMaHoaDon.Location = new System.Drawing.Point(106, 12);
-            this.cbxMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxMaHoaDon.Name = "cbxMaHoaDon";
-            this.cbxMaHoaDon.Size = new System.Drawing.Size(162, 21);
-            this.cbxMaHoaDon.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -147,8 +97,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.splitContainer1.Size = new System.Drawing.Size(809, 510);
-            this.splitContainer1.SplitterDistance = 229;
+            this.splitContainer1.Size = new System.Drawing.Size(809, 554);
+            this.splitContainer1.SplitterDistance = 248;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -511,30 +461,18 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.TxtBangChu);
             this.panel2.Controls.Add(this.btnDong);
             this.panel2.Controls.Add(this.btnInHoaDon);
             this.panel2.Controls.Add(this.btnHuyHoaDon);
-            this.panel2.Controls.Add(this.btnLuuHoaDon);
             this.panel2.Controls.Add(this.btnThemHoaDon);
             this.panel2.Controls.Add(this.txtTongTien);
             this.panel2.Controls.Add(this.lblTongTien);
-            this.panel2.Controls.Add(this.lblBangChu);
-            this.panel2.Controls.Add(this.label15);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(2, 205);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(796, 78);
             this.panel2.TabIndex = 0;
-            // 
-            // TxtBangChu
-            // 
-            this.TxtBangChu.Enabled = false;
-            this.TxtBangChu.Location = new System.Drawing.Point(103, 13);
-            this.TxtBangChu.Name = "TxtBangChu";
-            this.TxtBangChu.Size = new System.Drawing.Size(482, 20);
-            this.TxtBangChu.TabIndex = 9;
             // 
             // btnDong
             // 
@@ -549,7 +487,7 @@
             // 
             // btnInHoaDon
             // 
-            this.btnInHoaDon.Location = new System.Drawing.Point(480, 38);
+            this.btnInHoaDon.Location = new System.Drawing.Point(489, 38);
             this.btnInHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(119, 25);
@@ -559,7 +497,7 @@
             // 
             // btnHuyHoaDon
             // 
-            this.btnHuyHoaDon.Location = new System.Drawing.Point(348, 38);
+            this.btnHuyHoaDon.Location = new System.Drawing.Point(210, 38);
             this.btnHuyHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyHoaDon.Name = "btnHuyHoaDon";
             this.btnHuyHoaDon.Size = new System.Drawing.Size(119, 25);
@@ -568,19 +506,9 @@
             this.btnHuyHoaDon.UseVisualStyleBackColor = true;
             this.btnHuyHoaDon.Click += new System.EventHandler(this.btnHuyHoaDon_Click);
             // 
-            // btnLuuHoaDon
-            // 
-            this.btnLuuHoaDon.Location = new System.Drawing.Point(218, 38);
-            this.btnLuuHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuuHoaDon.Name = "btnLuuHoaDon";
-            this.btnLuuHoaDon.Size = new System.Drawing.Size(119, 25);
-            this.btnLuuHoaDon.TabIndex = 5;
-            this.btnLuuHoaDon.Text = "&Lưu Hoá Đơn";
-            this.btnLuuHoaDon.UseVisualStyleBackColor = true;
-            // 
             // btnThemHoaDon
             // 
-            this.btnThemHoaDon.Location = new System.Drawing.Point(92, 38);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(78, 38);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(119, 25);
@@ -591,7 +519,7 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(653, 16);
+            this.txtTongTien.Location = new System.Drawing.Point(690, 4);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
@@ -601,35 +529,12 @@
             // lblTongTien
             // 
             this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Location = new System.Drawing.Point(593, 16);
+            this.lblTongTien.Location = new System.Drawing.Point(630, 11);
             this.lblTongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(56, 13);
             this.lblTongTien.TabIndex = 2;
             this.lblTongTien.Text = "Tổng Tiền";
-            // 
-            // lblBangChu
-            // 
-            this.lblBangChu.AutoSize = true;
-            this.lblBangChu.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblBangChu.Location = new System.Drawing.Point(40, 16);
-            this.lblBangChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBangChu.Name = "lblBangChu";
-            this.lblBangChu.Size = new System.Drawing.Size(54, 13);
-            this.lblBangChu.TabIndex = 1;
-            this.lblBangChu.Text = "Bằng Chữ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.Control;
-            this.label15.ForeColor = System.Drawing.Color.Chocolate;
-            this.label15.Location = new System.Drawing.Point(433, 0);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(166, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Nháy Đúp Vào Một Dòng Để Xoá";
             // 
             // frmHoaDonBan
             // 
@@ -637,14 +542,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 554);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmHoaDonBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoá Đơn Bán Hàng";
             this.Load += new System.EventHandler(this.frmHoaDonBan_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -663,11 +565,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMaHoaDon;
-        private System.Windows.Forms.ComboBox cbxMaHoaDon;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblHoaDonBanHang;
@@ -703,15 +600,11 @@
         private System.Windows.Forms.TextBox txtTenHang;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label lblTongTien;
-        private System.Windows.Forms.Label lblBangChu;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Button btnHuyHoaDon;
-        private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.Button btnThemHoaDon;
         private System.Windows.Forms.ComboBox cbxMaKhachHang;
-        private System.Windows.Forms.TextBox TxtBangChu;
     }
 }

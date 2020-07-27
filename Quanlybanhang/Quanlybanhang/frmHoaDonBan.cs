@@ -23,6 +23,7 @@ namespace Quanlybanhang
             LoadMaHang();
             LoadMaNhanVien();
             LoadMaKhachHang();
+
         }
 
         void LoadHoaDonBan()
@@ -82,73 +83,7 @@ namespace Quanlybanhang
             cbxMaHang.ValueMember = "MaHang";
         }
 
-        public static string ChuyenSoSangChu(string sNumber)
-        {
-            int mLen, mDigit;
-            string mTemp = "";
-            string[] mNumText;
-            //Xóa các dấu "," nếu có
-            sNumber = sNumber.Replace(",", "");
-            mNumText = "không;một;hai;ba;bốn;năm;sáu;bảy;tám;chín".Split(';');
-            mLen = sNumber.Length - 1; // trừ 1 vì thứ tự đi từ 0
-            for (int i = 0; i <= mLen; i++)
-            {
-                mDigit = Convert.ToInt32(sNumber.Substring(i, 1));
-                mTemp = mTemp + " " + mNumText[mDigit];
-                if (mLen == i) // Chữ số cuối cùng không cần xét tiếp break; 
-                    switch ((mLen - i) % 9)
-                    {
-                        case 0:
-                            mTemp = mTemp + " tỷ";
-                            if (sNumber.Substring(i + 1, 3) == "000") i = i + 3;
-                            if (sNumber.Substring(i + 1, 3) == "000") i = i + 3;
-                            if (sNumber.Substring(i + 1, 3) == "000") i = i + 3;
-                            break;
-                        case 6:
-                            mTemp = mTemp + " triệu";
-                            if (sNumber.Substring(i + 1, 3) == "000") i = i + 3;
-                            if (sNumber.Substring(i + 1, 3) == "000") i = i + 3;
-                            break;
-                        case 3:
-                            mTemp = mTemp + " nghìn";
-                            if (sNumber.Substring(i + 1, 3) == "000") i = i + 3;
-                            break;
-                        default:
-                            switch ((mLen - i) % 3)
-                            {
-                                case 2:
-                                    mTemp = mTemp + " trăm";
-                                    break;
-                                case 1:
-                                    mTemp = mTemp + " mươi";
-                                    break;
-                            }
-                            break;
-                    }
-            }
-            //Loại bỏ trường hợp x00
-            mTemp = mTemp.Replace("không mươi không ", "");
-            mTemp = mTemp.Replace("không mươi không", ""); //Loại bỏ trường hợp 00x 
-            mTemp = mTemp.Replace("không mươi ", "linh "); //Loại bỏ trường hợp x0, x>=2
-            mTemp = mTemp.Replace("mươi không", "mươi");
-            //Fix trường hợp 10
-            mTemp = mTemp.Replace("một mươi", "mười");
-            //Fix trường hợp x4, x>=2
-            mTemp = mTemp.Replace("mươi bốn", "mươi tư");
-            //Fix trường hợp x04
-            mTemp = mTemp.Replace("linh bốn", "linh tư");
-            //Fix trường hợp x5, x>=2
-            mTemp = mTemp.Replace("mươi năm", "mươi lăm");
-            //Fix trường hợp x1, x>=2
-            mTemp = mTemp.Replace("mươi một", "mươi mốt");
-            //Fix trường hợp x15
-            mTemp = mTemp.Replace("mười năm", "mười lăm");
-            //Bỏ ký tự space
-            mTemp = mTemp.Trim();
-            //Viết hoa ký tự đầu tiên
-            mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " đồng";
-            return mTemp;
-        }
+       
         private void dgvHoaDonBanHang_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             List<HoaDonBan> hdb = qlbh.HoaDonBans.ToList();
@@ -156,7 +91,7 @@ namespace Quanlybanhang
             {
                 if (hdb[i].MaHDBan == dgvHoaDonBanHang.Rows[e.RowIndex].Cells[0].Value.ToString())
                 {
-                    txtMaHoaDon.Text = hdb[i].MaHDBan;
+                    
                     cbxMaKhachHang.SelectedValue = hdb[i].MaKhach;
                     cbxMaNhanVien.SelectedValue = hdb[i].MaNhanVien;
                     dtpNgayBan.Value = hdb[i].NgayBan;
@@ -193,27 +128,42 @@ namespace Quanlybanhang
             hdb.TongTien = Convert.ToInt32(txtThanhTien.Text);
 
             // cập nhật số lượng mới vào kho
-            List<Hang> hanglist = qlbh.Hangs.ToList<Hang>();
-            for (int i = 0; i < hanglist.Count; i++)
+            List<HoaDonBan> hdba = qlbh.HoaDonBans.ToList<HoaDonBan>();
+            bool checktrung = true;
+            for (int i = 0; i < hdba.Count; i++)
             {
-                if (hanglist[i].MaHang == cbxMaHang.SelectedValue.ToString())
+                if (hdba[i].MaHDBan==txtMaHoaDon.Text)
                 {
-                    if (hanglist[i].SoLuong >= Convert.ToInt32(txtSoLuong.Text))
-                    {
-                        hanglist[i].SoLuong = hanglist[i].SoLuong - Convert.ToInt32(txtSoLuong.Text);
-                        MessageBox.Show("Thêm Hoá đơn thành công \n" + "số lượng " + hanglist[i].TenHang + " còn lại " + hanglist[i].SoLuong);
-                        qlbh.ChiTietHoaDons.Add(cthd);
-                        qlbh.HoaDonBans.Add(hdb);
-                        qlbh.SaveChanges();
-                        LoadHoaDonBan();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Số Lượng " + hanglist[i].TenHang + " trong kho không còn đủ số lượng \n Thêm mới hoá đơn " + txtMaHoaDon.Text + " KHÔNG THÀNH CÔNG");
-
-                    }
+                    checktrung = false; MessageBox.Show("LỖi trùng mã Hoá đơn", "LỖI");
                 }
+                while (checktrung)
+                {
+                    List<Hang> hanglist = qlbh.Hangs.ToList<Hang>();
+                    for (int a = 0; a < hanglist.Count; a++)
+                    {
+                        if (hanglist[a].MaHang == cbxMaHang.SelectedValue.ToString())
+                        {
+                            if (hanglist[a].SoLuong >= Convert.ToInt32(txtSoLuong.Text))
+                            {
+                                hanglist[a].SoLuong = hanglist[i].SoLuong - Convert.ToInt32(txtSoLuong.Text);
+                                MessageBox.Show("Thêm Hoá đơn thành công \n" + "số lượng " + hanglist[a].TenHang + " còn lại " + hanglist[a].SoLuong);
+                                qlbh.ChiTietHoaDons.Add(cthd);
+                                qlbh.HoaDonBans.Add(hdb);
+                                qlbh.SaveChanges();
+                                LoadHoaDonBan();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Số Lượng " + hanglist[i].TenHang + " trong kho không còn đủ số lượng \n Thêm mới hoá đơn " + txtMaHoaDon.Text + " KHÔNG THÀNH CÔNG");
+
+                            }
+                        }
+                    }
+
+                }
+                
             }
+            
 
         }
 
@@ -291,7 +241,6 @@ namespace Quanlybanhang
                     GiamGia = Convert.ToInt32(txtGiamGia.Text);
                     txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
                     txtTongTien.Text = txtThanhTien.Text;
-                    TxtBangChu.Text = ChuyenSoSangChu(txtThanhTien.Text).ToString();
                 }
             }
             catch { }
@@ -309,7 +258,6 @@ namespace Quanlybanhang
                     GiamGia = Convert.ToInt32(txtGiamGia.Text);
                     txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
                     txtTongTien.Text = txtThanhTien.Text;
-                    TxtBangChu.Text = ChuyenSoSangChu(txtThanhTien.Text).ToString();
                 }
             }
             catch { }
@@ -327,7 +275,7 @@ namespace Quanlybanhang
                     GiamGia = Convert.ToInt32(txtGiamGia.Text);
                     txtThanhTien.Text = (SoLuong * DonGia - DonGia * SoLuong * GiamGia / 100).ToString();
                     txtTongTien.Text = txtThanhTien.Text;
-                    TxtBangChu.Text = ChuyenSoSangChu(txtThanhTien.Text).ToString();
+
                 }
             }
             catch { }
@@ -340,9 +288,7 @@ namespace Quanlybanhang
             txtGiamGia.Text = "";
             txtThanhTien.Text = "";
             txtTongTien.Text = "";
-            TxtBangChu.Text = "";
         }
 
-     
     }
 }

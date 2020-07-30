@@ -108,39 +108,30 @@ namespace Quanlybanhang
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            try
+
+            if (dgvKhachHang.Rows.Count == 0)
             {
-                if (dgvKhachHang.Rows.Count == 0)
-                {
-                    MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                //if (dgvNhanVien.Text == "")
-                //{
-                //    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
-                if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Khach xoakh = (from kh in qlbh.Khaches
-                                   where kh.MaKhach == txtMaKhachHang.Text.Trim()
-                                   select kh).Single<Khach>();
-
-                    qlbh.Khaches.Remove(xoakh);
-                    qlbh.SaveChanges();
-                    LoadKhachHang();
-
-                    MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            catch (Exception)
+            //if (dgvNhanVien.Text == "")
+            //{
+            //    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Khach xoakh = (from kh in qlbh.Khaches
+                               where kh.MaKhach == txtMaKhachHang.Text.Trim()
+                               select kh).Single<Khach>();
 
-                MessageBox.Show("Không thể xoá khách hàng! Khách hàng đã thực hiện giao dịch","Lỗi");
+                qlbh.Khaches.Remove(xoakh);
+                qlbh.SaveChanges();
+                LoadKhachHang();
+
+                MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-             
-            
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)

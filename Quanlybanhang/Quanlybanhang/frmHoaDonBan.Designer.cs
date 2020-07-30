@@ -64,6 +64,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDong = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnHuyHoaDon = new System.Windows.Forms.Button();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -461,6 +462,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnDong);
+            this.panel2.Controls.Add(this.btnInHoaDon);
             this.panel2.Controls.Add(this.btnHuyHoaDon);
             this.panel2.Controls.Add(this.btnThemHoaDon);
             this.panel2.Controls.Add(this.txtTongTien);
@@ -474,7 +476,7 @@
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(525, 38);
+            this.btnDong.Location = new System.Drawing.Point(612, 38);
             this.btnDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(119, 25);
@@ -483,9 +485,19 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
+            // btnInHoaDon
+            // 
+            this.btnInHoaDon.Location = new System.Drawing.Point(489, 38);
+            this.btnInHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(119, 25);
+            this.btnInHoaDon.TabIndex = 7;
+            this.btnInHoaDon.Text = "&In Hoá Đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            // 
             // btnHuyHoaDon
             // 
-            this.btnHuyHoaDon.Location = new System.Drawing.Point(339, 38);
+            this.btnHuyHoaDon.Location = new System.Drawing.Point(210, 38);
             this.btnHuyHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyHoaDon.Name = "btnHuyHoaDon";
             this.btnHuyHoaDon.Size = new System.Drawing.Size(119, 25);
@@ -496,7 +508,7 @@
             // 
             // btnThemHoaDon
             // 
-            this.btnThemHoaDon.Location = new System.Drawing.Point(153, 38);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(78, 38);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(119, 25);
@@ -590,6 +602,7 @@
         private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Button btnHuyHoaDon;
         private System.Windows.Forms.Button btnThemHoaDon;
         private System.Windows.Forms.ComboBox cbxMaKhachHang;

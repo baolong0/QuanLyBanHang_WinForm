@@ -97,38 +97,29 @@ namespace Quanlybanhang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
+            if (dgvNhanVien.Rows.Count == 0)
             {
-                if (dgvNhanVien.Rows.Count == 0)
-                {
-                    MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                //if (dgvNhanVien.Text == "")
-                //{
-                //    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
-                if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    NhanVien xoanv = (from nv in qlbh.NhanViens
-                                      where nv.MaNhanVien == txtMaNhanVien.Text.Trim()
-                                      select nv).Single<NhanVien>();
-
-                    qlbh.NhanViens.Remove(xoanv);
-                    qlbh.SaveChanges();
-                    LoadNhanVien();
-
-                    MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            catch (Exception)
+            //if (dgvNhanVien.Text == "")
+            //{
+            //    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                NhanVien xoanv = (from nv in qlbh.NhanViens
+                                  where nv.MaNhanVien == txtMaNhanVien.Text.Trim()
+                                  select nv).Single<NhanVien>();
 
-                MessageBox.Show("Không thể xoá nhân viên! Nhân viên đã xử lý giao dịch", "Lỗi");
+                qlbh.NhanViens.Remove(xoanv);
+                qlbh.SaveChanges();
+                LoadNhanVien();
+
+                MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            
         }
 
         private void dgvNhanVien_RowEnter(object sender, DataGridViewCellEventArgs e)

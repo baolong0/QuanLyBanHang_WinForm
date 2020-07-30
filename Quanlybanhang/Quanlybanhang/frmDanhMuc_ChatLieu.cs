@@ -70,36 +70,27 @@ namespace Quanlybanhang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
+            if (dgvChatLieu.Rows.Count == 0)
             {
-                if (dgvChatLieu.Rows.Count == 0)
-                {
-                    MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                if (txtMaChatLieu.Text.Trim() == "")
-                {
-                    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    ChatLieu xoasp = (from sp in qlbh.ChatLieux
-                                      where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
-                                      select sp).Single<ChatLieu>();
-                    qlbh.ChatLieux.Remove(xoasp);
-                    qlbh.SaveChanges();
-                    LoadChatLieu();
-                    MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            catch (Exception)
+            if (txtMaChatLieu.Text.Trim() == "")
             {
-
-                MessageBox.Show("Không thể xoá chất liệu này! Mặt hàng đã nằm trong giao dịch", "Lỗi");
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ChatLieu xoasp = (from sp in qlbh.ChatLieux
+                                  where sp.MaChatLieu == txtMaChatLieu.Text.Trim()
+                                  select sp).Single<ChatLieu>();
+                qlbh.ChatLieux.Remove(xoasp);
+                qlbh.SaveChanges();
+                LoadChatLieu();
+                MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
         }
 
         private void frmDanhMuc_ChatLieu_Load(object sender, EventArgs e)

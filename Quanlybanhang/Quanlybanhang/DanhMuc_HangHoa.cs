@@ -116,36 +116,28 @@ namespace Quanlybanhang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
+
+            if (dgvHangHoa.Rows.Count == 0)
             {
-                if (dgvHangHoa.Rows.Count == 0)
-                {
-                    MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                //if (txtMaHang.Text == "")
-                //{
-                //    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
-                if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Hang xoasp = (from sp in qlbh.Hangs
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //if (txtMaHang.Text == "")
+            //{
+            //    MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hang xoasp = (from sp in qlbh.Hangs
                                   where sp.MaHang == txtMaHang.Text.Trim()
                                   select sp).Single<Hang>();
-                    qlbh.Hangs.Remove(xoasp);
-                    qlbh.SaveChanges();
-                    LoadHangHoa();
-                    MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                qlbh.Hangs.Remove(xoasp);
+                qlbh.SaveChanges();
+                LoadHangHoa();
+                MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Không thể xoá mặt hàng này! Mặt hàng đã nằm trong giao dịch", "Lỗi");
-            }
-            
         }
 
         private void dgvHangHoa_RowEnter(object sender, DataGridViewCellEventArgs e)

@@ -43,6 +43,24 @@
       <HintPath>Z:\Downloads\IT_CNPM\C#\LapTrinhDesktop\WinForm\Team\QuanLyBanHang_WinForm\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -77,11 +95,17 @@
     <Compile Include="DanhMuc_KhachHang.Designer.cs">
       <DependentUpon>DanhMuc_KhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCao.cs">
+    <Compile Include="Frm Giới Thiệu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBaoCao.Designer.cs">
-      <DependentUpon>frmBaoCao.cs</DependentUpon>
+    <Compile Include="Frm Giới Thiệu.Designer.cs">
+      <DependentUpon>Frm Giới Thiệu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmbaocaos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmbaocaos.Designer.cs">
+      <DependentUpon>Frmbaocaos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -143,14 +167,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyBanHangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanHangDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="DanhMuc_HangHoa.resx">
       <DependentUpon>DanhMuc_HangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc_KhachHang.resx">
       <DependentUpon>DanhMuc_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBaoCao.resx">
-      <DependentUpon>frmBaoCao.cs</DependentUpon>
+    <EmbeddedResource Include="Frm Giới Thiệu.resx">
+      <DependentUpon>Frm Giới Thiệu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmbaocaos.resx">
+      <DependentUpon>Frmbaocaos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -177,6 +210,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="App.Config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -197,6 +231,17 @@
     <None Include="QuanLyBanHang.edmx.diagram">
       <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
     </None>
+    <None Include="QuanLyBanHangDataSet.xsc">
+      <DependentUpon>QuanLyBanHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBanHangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBanHangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBanHangDataSet.xss">
+      <DependentUpon>QuanLyBanHangDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Dakirby309-Simply-Styled-Microsoft-Excel-20131.ico" />
     <None Include="Resources\Dakirby309-Simply-Styled-Microsoft-Excel-2013.ico" />
     <None Include="Resources\5a514b62f0cceae57c5b394a74685126.jpeg" />
@@ -215,6 +260,20 @@
       <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
       <LastGenOutput>QuanLyBanHang.cs</LastGenOutput>
     </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\UEH.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

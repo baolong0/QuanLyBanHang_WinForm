@@ -65,10 +65,17 @@ namespace Quanlybanhang
             frmTimKiemHoaDon.Show();
         }
 
-        private void mnuBaoCao_DoanhThu_Click(object sender, EventArgs e)
+
+        private void mnuTroGiup_GioiThieu_Click(object sender, EventArgs e)
         {
-            frmBaoCao frmBaoCao = new frmBaoCao();
-            frmBaoCao.Show();
+            Frm_Giới_Thiệu frm_Giới_Thiệu = new Frm_Giới_Thiệu();
+            frm_Giới_Thiệu.Show();
+        }
+
+        private void bảnBáoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frmbaocaos frmbaocaos = new Frmbaocaos();
+            frmbaocaos.Show();
         }
     }
 }

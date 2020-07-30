@@ -55,7 +55,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 328);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 85);
+            this.panel1.Size = new System.Drawing.Size(715, 85);
             this.panel1.TabIndex = 0;
             // 
             // label15
@@ -63,7 +63,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.SystemColors.Control;
             this.label15.ForeColor = System.Drawing.Color.Chocolate;
-            this.label15.Location = new System.Drawing.Point(442, 2);
+            this.label15.Location = new System.Drawing.Point(419, 2);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(244, 13);
@@ -72,7 +72,7 @@
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(585, 29);
+            this.btnDong.Location = new System.Drawing.Point(562, 29);
             this.btnDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(101, 45);
@@ -105,7 +105,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(742, 113);
+            this.panel2.Size = new System.Drawing.Size(715, 113);
             this.panel2.TabIndex = 16;
             // 
             // note1
@@ -114,16 +114,15 @@
             this.note1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.note1.Location = new System.Drawing.Point(571, 90);
             this.note1.Name = "note1";
-            this.note1.Size = new System.Drawing.Size(159, 13);
+            this.note1.Size = new System.Drawing.Size(0, 13);
             this.note1.TabIndex = 12;
-            this.note1.Text = "Chỉ nhập một trường để tìm kiếm";
             // 
             // txtMaKhachHang
             // 
             this.txtMaKhachHang.Location = new System.Drawing.Point(177, 43);
             this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(315, 20);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(410, 20);
             this.txtMaKhachHang.TabIndex = 10;
             // 
             // txtMaNhanVien
@@ -131,7 +130,7 @@
             this.txtMaNhanVien.Location = new System.Drawing.Point(177, 80);
             this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(315, 20);
+            this.txtMaNhanVien.Size = new System.Drawing.Size(410, 20);
             this.txtMaNhanVien.TabIndex = 9;
             // 
             // txtMaHoaDon
@@ -139,7 +138,7 @@
             this.txtMaHoaDon.Location = new System.Drawing.Point(177, 7);
             this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(315, 20);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(410, 20);
             this.txtMaHoaDon.TabIndex = 6;
             // 
             // lblMaKhachHang
@@ -181,14 +180,14 @@
             this.dgvTimKiemHoaDon.Name = "dgvTimKiemHoaDon";
             this.dgvTimKiemHoaDon.RowHeadersWidth = 82;
             this.dgvTimKiemHoaDon.RowTemplate.Height = 33;
-            this.dgvTimKiemHoaDon.Size = new System.Drawing.Size(742, 215);
+            this.dgvTimKiemHoaDon.Size = new System.Drawing.Size(715, 215);
             this.dgvTimKiemHoaDon.TabIndex = 17;
             // 
             // frmTimKiemHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 413);
+            this.ClientSize = new System.Drawing.Size(715, 413);
             this.Controls.Add(this.dgvTimKiemHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

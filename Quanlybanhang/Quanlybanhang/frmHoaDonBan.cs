@@ -111,58 +111,66 @@ namespace Quanlybanhang
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
         {
-            // tạo mới hoá đơn
-            ChiTietHoaDon cthd = new ChiTietHoaDon();
-            cthd.MaHDBan = txtMaHoaDon.Text;
-            cthd.MaHang = cbxMaHang.SelectedValue.ToString();
-            cthd.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-            cthd.DonGia = Convert.ToInt32(txtDonGia.Text);
-            cthd.GiamGia = Convert.ToInt32(txtGiamGia.Text);
-            cthd.ThanhTien = Convert.ToInt32(txtThanhTien.Text);
-
-            HoaDonBan hdb = new HoaDonBan();
-            hdb.MaHDBan = txtMaHoaDon.Text;
-            hdb.MaNhanVien = cbxMaNhanVien.SelectedValue.ToString();
-            hdb.NgayBan = dtpNgayBan.Value;
-            hdb.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
-            hdb.TongTien = Convert.ToInt32(txtThanhTien.Text);
-
-            // cập nhật số lượng mới vào kho
-            List<HoaDonBan> hdba = qlbh.HoaDonBans.ToList<HoaDonBan>();
-            bool checktrung = true;
-            for (int i = 0; i < hdba.Count; i++)
+            try
             {
-                if (hdba[i].MaHDBan==txtMaHoaDon.Text)
-                {
-                    checktrung = false; MessageBox.Show("LỖi trùng mã Hoá đơn", "LỖI");
-                }
-                while (checktrung)
-                {
-                    List<Hang> hanglist = qlbh.Hangs.ToList<Hang>();
-                    for (int a = 0; a < hanglist.Count; a++)
-                    {
-                        if (hanglist[a].MaHang == cbxMaHang.SelectedValue.ToString())
-                        {
-                            if (hanglist[a].SoLuong >= Convert.ToInt32(txtSoLuong.Text))
-                            {
-                                hanglist[a].SoLuong = hanglist[i].SoLuong - Convert.ToInt32(txtSoLuong.Text);
-                                MessageBox.Show("Thêm Hoá đơn thành công \n" + "số lượng " + hanglist[a].TenHang + " còn lại " + hanglist[a].SoLuong);
-                                qlbh.ChiTietHoaDons.Add(cthd);
-                                qlbh.HoaDonBans.Add(hdb);
-                                qlbh.SaveChanges();
-                                LoadHoaDonBan();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Số Lượng " + hanglist[i].TenHang + " trong kho không còn đủ số lượng \n Thêm mới hoá đơn " + txtMaHoaDon.Text + " KHÔNG THÀNH CÔNG");
+                // tạo mới hoá đơn
+                ChiTietHoaDon cthd = new ChiTietHoaDon();
+                cthd.MaHDBan = txtMaHoaDon.Text;
+                cthd.MaHang = cbxMaHang.SelectedValue.ToString();
+                cthd.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                cthd.DonGia = Convert.ToInt32(txtDonGia.Text);
+                cthd.GiamGia = Convert.ToInt32(txtGiamGia.Text);
+                cthd.ThanhTien = Convert.ToInt32(txtThanhTien.Text);
 
+                HoaDonBan hdb = new HoaDonBan();
+                hdb.MaHDBan = txtMaHoaDon.Text;
+                hdb.MaNhanVien = cbxMaNhanVien.SelectedValue.ToString();
+                hdb.NgayBan = dtpNgayBan.Value;
+                hdb.MaKhach = cbxMaKhachHang.SelectedValue.ToString();
+                hdb.TongTien = Convert.ToInt32(txtThanhTien.Text);
+
+                // cập nhật số lượng mới vào kho
+                List<HoaDonBan> hdba = qlbh.HoaDonBans.ToList<HoaDonBan>();
+                bool checktrung = true;
+                for (int i = 0; i < hdba.Count; i++)
+                {
+                    if (hdba[i].MaHDBan == txtMaHoaDon.Text)
+                    {
+                        checktrung = false; MessageBox.Show("LỖi trùng mã Hoá đơn", "LỖI");
+                    }
+                    while (checktrung)
+                    {
+                        List<Hang> hanglist = qlbh.Hangs.ToList<Hang>();
+                        for (int a = 0; a < hanglist.Count; a++)
+                        {
+                            if (hanglist[a].MaHang == cbxMaHang.SelectedValue.ToString())
+                            {
+                                if (hanglist[a].SoLuong >= Convert.ToInt32(txtSoLuong.Text))
+                                {
+                                    hanglist[a].SoLuong = hanglist[i].SoLuong - Convert.ToInt32(txtSoLuong.Text);
+                                    MessageBox.Show("Thêm Hoá đơn thành công \n" + "số lượng " + hanglist[a].TenHang + " còn lại " + hanglist[a].SoLuong);
+                                    qlbh.ChiTietHoaDons.Add(cthd);
+                                    qlbh.HoaDonBans.Add(hdb);
+                                    qlbh.SaveChanges();
+                                    LoadHoaDonBan();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Số Lượng " + hanglist[i].TenHang + " trong kho không còn đủ số lượng \n Thêm mới hoá đơn " + txtMaHoaDon.Text + " KHÔNG THÀNH CÔNG");
+
+                                }
                             }
                         }
+
                     }
 
                 }
-                
             }
+            catch 
+            {
+
+            }
+            
             
 
         }
